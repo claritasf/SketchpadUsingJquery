@@ -43,15 +43,8 @@ h2 {
     border-width: thin;
 }
 
-.change {
 
-    
-    background-color: black;
-    /* background-color: white; */
-
-}
-
-.button, .colorButton, .BWbutton, .newGrid {
+.button, .newGrid, #colors {
     
     height:20px;
 	width:150px;
