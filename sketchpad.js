@@ -1,13 +1,21 @@
+function drawGrid (height, width){
+
+		for (i=0; i < height; i++){
+   			$('<div>').addClass('square-line').appendTo(".container");
+   		};
+    
+    	var squareWidth = 600/width;
+    	for (j=0; j < width; j++){
+    		$('<div>').addClass('square').css("width",squareWidth).css("height",squareWidth).appendTo(".square-line");	
+		};
+
+	}
+
 $(document).ready(function(){
     var height = 16;
     var width = 16;
-    for (i=0; i < height; i++){
-   		$('<div>').addClass('square-line').appendTo(".container");
-   	};
-    
-    for (j=0; j < width; j++){
-    	$('<div>').addClass('square').appendTo(".square-line");	
-	};
+
+    drawGrid (height, width);
 	
 	$('.button').on('click', function() {
 		$('.square').removeAttr( 'style');
@@ -36,27 +44,11 @@ $(document).ready(function(){
 		var value = prompt('How many Squares per size do you want?');
 		var height = value;
     	var width =value;
-    	for (i=0; i < height; i++){
-   			$('<div>').addClass('square-line').appendTo(".container");
-   		};
-    
-    	for (j=0; j < width; j++){
-    		$('<div>').addClass('square').appendTo(".square-line");	
-		};
+    	
+    	drawGrid (height, width);
 		
 	});
-
-	//function drawGrid (height, width){
-
-	//	for (i=0; i < height; i++){
-   	//		$('<div>').addClass('square-line').appendTo(".container");
-   	//	};
-    
-    //	for (j=0; j < width; j++){
-    //		$('<div>').addClass('square').appendTo(".square-line");	
-	//	};
-
-	//}
+	
 
 
 });
