@@ -19,18 +19,42 @@ $(document).ready(function(){
 	
 	$('.button').on('click', function() {
 		$('.square').removeAttr( 'style');
-		$('.container').find('.change').removeClass('change');
 		$('.container').off('mouseenter', '.square');
 
 	});
 
-	$('.colorButton').on('click', function() {
-		$('.container').on('mouseenter', '.square', function(){
-			var color = 'rgb(' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ')';
-			$(this).css("background",color);
-		});
-
+	$('#colors').on('change', function() {
+    
+    	var color = $("#colors option:selected").val();
+    	switch(color){
+		  case 'black':
+		    $('.container').on('mouseenter', '.square', function(){
+			$(this).css("background-color", 'black');
+			});
+		    break;
+		  case 'blue':
+		    $('.container').on('mouseenter', '.square', function(){
+			$(this).css("background-color", 'blue');
+			});
+		    break;
+		  case 'red':
+		    $('.container').on('mouseenter', '.square', function(){
+			$(this).css("background-color", 'red');
+			});
+		    break;
+		  case 'yellow':
+		    $('.container').on('mouseenter', '.square', function(){
+			$(this).css("background-color", 'yellow');
+			});
+		    break;
+		  case 'rainbow':
+		    $('.container').on('mouseenter', '.square', function(){
+			var multiplecolor = 'rgb(' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ')';
+			$(this).css("background",multiplecolor);
+			});
+		}	
 	});
+
 
 	$('.BWbutton').on('click', function() {
 		$('.container').on('mouseenter', '.square', function(){	
