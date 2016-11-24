@@ -20,6 +20,7 @@ $(document).ready(function(){
 	$('.button').on('click', function() {
 		$('.square').removeAttr( 'style');
 		$('.container').off('mouseenter', '.square');
+		$('#colors').val('choose');
 
 	});
 
@@ -55,12 +56,6 @@ $(document).ready(function(){
 		}	
 	});
 
-
-	$('.BWbutton').on('click', function() {
-		$('.container').on('mouseenter', '.square', function(){	
-			$(this).addClass('change');
-		});
-	});
 
 	$('.newGrid').on('click', function() {
 		
